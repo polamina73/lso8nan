@@ -69,6 +69,14 @@
                         </span>
                     </div>
 
+                    <a href="{{ $client->whatsapp_url ? $client->whatsapp_url : '#' }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="mb-3 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-green-700 active:bg-green-800 {{ $client->whatsapp_url ? '' : 'pointer-events-none opacity-40' }}">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.6 13.2a1 1 0 00-.7.2l-1.5 1a8.2 8.2 0 01-3.6-3.6l1-1.5a1 1 0 00.2-.7l-.8-2.7a1 1 0 00-1.2-.7l-2.2.6a1 1 0 00-.7.9c0 6.1 4.9 11 11 11a1 1 0 00.9-.7l.6-2.2a1 1 0 00-.7-1.2l-2.3-.4z"/></svg>
+                        WhatsApp
+                    </a>
+
                     {{-- Budget --}}
                     <div class="text-sm text-gray-600 mb-2">
                         <span class="text-gray-400">Budget:</span> {{ $client->budget_label }}
@@ -103,9 +111,9 @@
                     </div>
 
                     {{-- Edit / Delete --}}
-                    <div class="flex gap-2 pt-3 border-t border-gray-100">
+                    <div class="grid grid-cols-2 gap-2 pt-3 border-t border-gray-100">
                         <a href="{{ route('clients.edit', $client) }}"
-                           class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 active:bg-indigo-800 transition-colors">
+                           class="inline-flex items-center justify-center gap-1.5 py-2.5 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 active:bg-indigo-800 transition-colors">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 13l6.293-6.293a1 1 0 011.414 0l1.586 1.586a1 1 0 010 1.414L12 16H9v-3z"/></svg>
                             Edit
                         </a>
@@ -188,6 +196,13 @@
                             </td>
 
                             <td class="px-4 py-3 text-right whitespace-nowrap">
+                                <a href="{{ $client->whatsapp_url ? $client->whatsapp_url : '#' }}"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-white bg-emerald-500 rounded-md hover:bg-emerald-600 transition-colors mr-1.5 {{ $client->whatsapp_url ? '' : 'pointer-events-none opacity-40' }}">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.6 13.2a1 1 0 00-.7.2l-1.5 1a8.2 8.2 0 01-3.6-3.6l1-1.5a1 1 0 00.2-.7l-.8-2.7a1 1 0 00-1.2-.7l-2.2.6a1 1 0 00-.7.9c0 6.1 4.9 11 11 11a1 1 0 00.9-.7l.6-2.2a1 1 0 00-.7-1.2l-2.3-.4z"/></svg>
+                                    WhatsApp
+                                </a>
                                 <a href="{{ route('clients.edit', $client) }}"
                                    class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 transition-colors mr-1.5">
                                     <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 13l6.293-6.293a1 1 0 011.414 0l1.586 1.586a1 1 0 010 1.414L12 16H9v-3z"/></svg>

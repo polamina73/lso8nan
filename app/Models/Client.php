@@ -52,6 +52,20 @@ class Client extends Model
         return self::$budgetLabels[$this->budget] ?? $this->budget;
     }
 
+    public function getWhatsappPhoneAttribute(): ?string
+    {
+        $phone = preg_replace('/\D+/', '', (string) $this->phone);
+
+        return $phone !== '' ? $phone : null;
+    }
+
+    public function getWhatsappUrlAttribute(): ?string
+    {
+        return $this->whatsapp_phone
+            ? 'https://wa.me/'.$this->whatsapp_phone
+            : null;
+    }
+
     public function getStatusLabelAttribute(): string
     {
         return self::$statusLabels[$this->status] ?? $this->status;
