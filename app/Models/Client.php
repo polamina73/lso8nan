@@ -23,10 +23,10 @@ class Client extends Model
     ];
 
     public static array $budgetLabels = [
-        'under_10k' => 'Under 10K',
-        '10k_50k' => '10K - 50K',
-        '50k_100k' => '50K - 100K',
-        'above_100k' => 'Above 100K',
+        'under_10k' => 'Under 1M',
+        '10k_50k' => '1M – 3M',
+        '50k_100k' => '3M – 5M',
+        'above_100k' => 'Above 5M',
     ];
 
     public static array $statusLabels = [

@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Hide scrollbar while keeping scroll functionality */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* iOS safe-area support */
+.pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+
